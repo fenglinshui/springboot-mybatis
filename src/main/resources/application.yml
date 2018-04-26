@@ -1,0 +1,12 @@
+smybatis:
+    configLocation: classpath:/config/spring-mybati.xml
+spring:
+  datasource:
+      url : jdbc:mysql://133.130.120.85:3306/conoha?useUnicode=true&characterEncoding=utf8
+      username : fenglinshui
+      password : 3181838
+      driverClassName : com.mysql.jdbc.Driver
+logging:
+  level: debug
+cron:
+  clawerForBook:0/5 * * * * ?
