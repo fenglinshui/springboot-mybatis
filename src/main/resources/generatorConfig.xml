@@ -146,7 +146,7 @@
         <!--</table>-->
         <!--<table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
         <!--<table tableName="calendar" domainObjectName="Calendar" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
-        <table tableName="pixiv_image_show" domainObjectName="PixivImage" enableCountByExample="false"
+        <table tableName="av_movie" domainObjectName="AvMovie" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                selectByExampleQueryId="false"></table>
     </context>

@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling//开启计划任务
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-@MapperScan("conoha.dao")
+@MapperScan({"conoha.dao", "conoha.utils"})
 public class SpringbootApplication {
 
     public static void main(String[] args) {
