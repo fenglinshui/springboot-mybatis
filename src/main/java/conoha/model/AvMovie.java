@@ -144,6 +144,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.id
      *
      * @return the value of av_movie.id
+     *
      * @mbggenerated
      */
     public Integer getId() {
@@ -155,6 +156,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.id
      *
      * @param id the value for av_movie.id
+     *
      * @mbggenerated
      */
     public void setId(Integer id) {
@@ -166,6 +168,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.name
      *
      * @return the value of av_movie.name
+     *
      * @mbggenerated
      */
     public String getName() {
@@ -177,6 +180,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.name
      *
      * @param name the value for av_movie.name
+     *
      * @mbggenerated
      */
     public void setName(String name) {
@@ -188,6 +192,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.tag
      *
      * @return the value of av_movie.tag
+     *
      * @mbggenerated
      */
     public String getTag() {
@@ -199,6 +204,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.tag
      *
      * @param tag the value for av_movie.tag
+     *
      * @mbggenerated
      */
     public void setTag(String tag) {
@@ -210,6 +216,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.imgs
      *
      * @return the value of av_movie.imgs
+     *
      * @mbggenerated
      */
     public String getImgs() {
@@ -221,6 +228,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.imgs
      *
      * @param imgs the value for av_movie.imgs
+     *
      * @mbggenerated
      */
     public void setImgs(String imgs) {
@@ -232,6 +240,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.url
      *
      * @return the value of av_movie.url
+     *
      * @mbggenerated
      */
     public String getUrl() {
@@ -243,6 +252,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.url
      *
      * @param url the value for av_movie.url
+     *
      * @mbggenerated
      */
     public void setUrl(String url) {
@@ -254,6 +264,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.size
      *
      * @return the value of av_movie.size
+     *
      * @mbggenerated
      */
     public Long getSize() {
@@ -265,6 +276,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.size
      *
      * @param size the value for av_movie.size
+     *
      * @mbggenerated
      */
     public void setSize(Long size) {
@@ -276,6 +288,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.attachment_name
      *
      * @return the value of av_movie.attachment_name
+     *
      * @mbggenerated
      */
     public String getAttachmentName() {
@@ -287,6 +300,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.attachment_name
      *
      * @param attachmentName the value for av_movie.attachment_name
+     *
      * @mbggenerated
      */
     public void setAttachmentName(String attachmentName) {
@@ -298,6 +312,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.attachment_url
      *
      * @return the value of av_movie.attachment_url
+     *
      * @mbggenerated
      */
     public String getAttachmentUrl() {
@@ -309,6 +324,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.attachment_url
      *
      * @param attachmentUrl the value for av_movie.attachment_url
+     *
      * @mbggenerated
      */
     public void setAttachmentUrl(String attachmentUrl) {
@@ -320,6 +336,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.is_Delete
      *
      * @return the value of av_movie.is_Delete
+     *
      * @mbggenerated
      */
     public Boolean getIsDelete() {
@@ -331,6 +348,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.is_Delete
      *
      * @param isDelete the value for av_movie.is_Delete
+     *
      * @mbggenerated
      */
     public void setIsDelete(Boolean isDelete) {
@@ -342,6 +360,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.download
      *
      * @return the value of av_movie.download
+     *
      * @mbggenerated
      */
     public Boolean getDownload() {
@@ -353,6 +372,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.download
      *
      * @param download the value for av_movie.download
+     *
      * @mbggenerated
      */
     public void setDownload(Boolean download) {
@@ -364,6 +384,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.download_time
      *
      * @return the value of av_movie.download_time
+     *
      * @mbggenerated
      */
     public Date getDownloadTime() {
@@ -375,6 +396,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.download_time
      *
      * @param downloadTime the value for av_movie.download_time
+     *
      * @mbggenerated
      */
     public void setDownloadTime(Date downloadTime) {
@@ -386,6 +408,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.is_show
      *
      * @return the value of av_movie.is_show
+     *
      * @mbggenerated
      */
     public Boolean getIsShow() {
@@ -397,6 +420,7 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.is_show
      *
      * @param isShow the value for av_movie.is_show
+     *
      * @mbggenerated
      */
     public void setIsShow(Boolean isShow) {
@@ -408,6 +432,7 @@ public class AvMovie {
      * This method returns the value of the database column av_movie.add_date
      *
      * @return the value of av_movie.add_date
+     *
      * @mbggenerated
      */
     public Date getAddDate() {
@@ -419,9 +444,29 @@ public class AvMovie {
      * This method sets the value of the database column av_movie.add_date
      *
      * @param addDate the value for av_movie.add_date
+     *
      * @mbggenerated
      */
     public void setAddDate(Date addDate) {
         this.addDate = addDate;
+    }
+
+    @Override
+    public String toString() {
+        return "AvMovie{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tag='" + tag + '\'' +
+                ", imgs='" + imgs + '\'' +
+                ", url='" + url + '\'' +
+                ", size=" + size +
+                ", attachmentName='" + attachmentName + '\'' +
+                ", attachmentUrl='" + attachmentUrl + '\'' +
+                ", isDelete=" + isDelete +
+                ", download=" + download +
+                ", downloadTime=" + downloadTime +
+                ", isShow=" + isShow +
+                ", addDate=" + addDate +
+                '}';
     }
 }

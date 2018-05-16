@@ -9,9 +9,12 @@ import org.jsoup.select.Elements;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
 
 public class SisUtils {
     public static String rootUrl = "http://174.127.195.166/bbs/";
+    public static String rootUrl2 = "http://www.sexinsex.net/bbs/";
+
     //    @Autowired
     private static AvMovieMapper avMovieMapper = (AvMovieMapper) SpringUtil.getBeanByClass(AvMovieMapper.class);
 
@@ -41,6 +44,27 @@ public class SisUtils {
         return trs;
     }
 
+    public static int getSize(String name) {
+//        System.out.println(name);
+        Matcher matcher = ClawerTools.getMatcher(name, "([\\d\\.]+[\\S]{2})+]");
+        String size = "";
+        int result = 0;
+        if (matcher.find()) {
+//            System.out.println("size:"+);
+            size = matcher.group(1);
+        }
+        if (size.contains("MB")) {
+            result = Integer.valueOf(size.replace("MB", ""));
+        }
+//        System.out.println(size);
+        if (size.contains("GB")) {
+            Float f = 1024 * Float.valueOf(size.replace("GB", ""));
+            result = f.intValue();
+        }
+        ;
+        return result;
+    }
+
     public static void getMovieDetails(Element element) {
         try {
             String tag = element.getElementsByTag("em").get(0).getElementsByTag("a").html();
@@ -48,9 +72,17 @@ public class SisUtils {
             String href = element.getElementsByTag("span").get(0).getElementsByTag("a").get(0).attr("href");
 //        System.out.format("%-10s   -%20s   %-20s\n", tag, name, href);//tag
             Document page = ClawerTools.getDocument(rootUrl + href);
-            Element attachment = page.getElementsByClass("t_attachlist").get(0).getElementsByTag("a").get(0);
-            String attachmentUrl = rootUrl + attachment.attr("href");
-            String attachmentName = attachment.html();
+            Element attachment = null;
+            String attachmentUrl = "";
+            String attachmentName = "";
+            if (page.getElementsByClass("t_attachlist").size() == 0) {
+
+            } else {
+                attachment = page.getElementsByClass("t_attachlist").get(0).getElementsByTag("a").get(0);
+                attachmentUrl = rootUrl2 + attachment.attr("href");
+                attachmentName = attachment.html();
+            }
+
 //        System.out.format("%-20s   %-20s", attachmentUrl, attachmentName);
             Elements imgs = page.getElementsByClass("t_msgfont").get(0).getElementsByTag("img");
             StringBuffer sb = new StringBuffer();
@@ -59,25 +91,26 @@ public class SisUtils {
             if (imgs.size() < 5) {
                 size = imgs.size();
             }
-            for (int index = 0; index <= size; index++) {
+            for (int index = 0; index < size; index++) {
 //            System.out.println(imgs.get(index).attr("src"));
                 sb.append(imgs.get(index).attr("src"));
                 sb.append(";");
             }
+            getSize(name);
             sb.deleteCharAt(sb.length() - 1);
             AvMovie avMovie = new AvMovie();
             avMovie.setTag(tag);
             avMovie.setName(name);
-            avMovie.setUrl(rootUrl + href);
+            avMovie.setUrl(rootUrl2 + href);
             avMovie.setAttachmentName(attachmentName);
             avMovie.setAttachmentUrl(attachmentUrl);
             avMovie.setImgs(sb.toString());
             avMovie.setIsDelete(false);
             avMovie.setDownload(false);
             avMovie.setIsShow(true);
-            avMovie.setSize((long) 0);
+            avMovie.setSize((long) (getSize(name)));
             avMovie.setAddDate(new Date());
-//        System.out.println(avMovie.toString());
+            System.out.println(name);
             System.out.println(avMovieMapper.insert(avMovie));
         } catch (Exception e) {
             e.printStackTrace();

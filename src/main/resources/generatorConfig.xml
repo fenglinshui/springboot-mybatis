@@ -8,7 +8,7 @@
 
     <!--指定特定数据库的jdbc驱动jar包的位置 -->
     <classPathEntry
-            location="C:\Users\caoshibin\.m2\repository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>
+            location="D:\maven\mysql\mysql-connector-java\6.0.5\mysql-connector-java-6.0.5.jar"/>
 
     <context id="default" targetRuntime="MyBatis3">
 
