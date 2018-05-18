@@ -46,7 +46,7 @@ public class SisUtils {
 
     public static int getSize(String name) {
 //        System.out.println(name);
-        Matcher matcher = ClawerTools.getMatcher(name, "([\\d\\.]+[\\S]{2})+]");
+        Matcher matcher = ClawerTools.getMatcher(name, "([\\d\\.]+[GMB]{2})+]");
         String size = "";
         int result = 0;
         if (matcher.find()) {
@@ -110,8 +110,10 @@ public class SisUtils {
             avMovie.setIsShow(true);
             avMovie.setSize((long) (getSize(name)));
             avMovie.setAddDate(new Date());
-            System.out.println(name);
-            System.out.println(avMovieMapper.insert(avMovie));
+            avMovie.setType("SIS_WESTERN ");
+//            System.out.println(name);
+            avMovieMapper.insert(avMovie);
+//            System.out.println(avMovieMapper.insert(avMovie));
         } catch (Exception e) {
             e.printStackTrace();
             return;

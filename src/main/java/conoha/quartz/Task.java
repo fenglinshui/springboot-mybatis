@@ -37,9 +37,9 @@ public class Task {
 //        if(flag){
 //            return;
 //        }
-        Set<String> urls = avMovieMapper.getUrls();
-        System.out.println("saved:" + urls.size());
-        executorPool = ThreadTools.getThreadPool(1, 4, 10, Executors.defaultThreadFactory(), new RejectedExecution());
+        Set<String> names = avMovieMapper.getNames();
+        System.out.println("saved:" + names.size());
+        executorPool = ThreadTools.getThreadPool(1, 10, 10, Executors.defaultThreadFactory(), new RejectedExecution());
         Runnable monitor = ThreadTools.getMonitorThread(executorPool, 1);
         for (int index = 1; index < 1001; index++) {
             Elements trs = SisUtils.getRows("forum-229-" + index + ".html");
@@ -48,8 +48,9 @@ public class Task {
                 continue;
             }
             trs.stream().filter(element -> element.getElementsByTag("em").size() > 0).forEach(element -> {
-                String href = element.getElementsByTag("span").get(0).getElementsByTag("a").get(0).attr("href");
-                if (urls.contains(SisUtils.rootUrl2 + href)) {
+//                String href = element.getElementsByTag("span").get(0).getElementsByTag("a").get(0).attr("href");
+                String name = element.getElementsByTag("span").get(0).getElementsByTag("a").html();
+                if (names.contains(name)) {
 
                 } else {
                     while (executorPool.getActiveCount() >= 20) {

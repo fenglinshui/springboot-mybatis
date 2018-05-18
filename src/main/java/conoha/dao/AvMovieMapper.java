@@ -16,18 +16,18 @@ public interface AvMovieMapper {
      * @mbggenerated
      */
     @Insert({
-            "insert into av_movie (id, name, ",
-            "tag, imgs, url, ",
-            "size, attachment_name, ",
-            "attachment_url, is_Delete, ",
-            "download, download_time, ",
-            "is_show, add_date)",
-            "values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, ",
-            "#{tag,jdbcType=VARCHAR}, #{imgs,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, ",
-            "#{size,jdbcType=DECIMAL}, #{attachmentName,jdbcType=VARCHAR}, ",
-            "#{attachmentUrl,jdbcType=VARCHAR}, #{isDelete,jdbcType=BIT}, ",
-            "#{download,jdbcType=BIT}, #{downloadTime,jdbcType=TIMESTAMP}, ",
-            "#{isShow,jdbcType=BIT}, #{addDate,jdbcType=TIMESTAMP})"
+        "insert into av_movie (id, name, ",
+        "tag, imgs, url, ",
+        "size, attachment_name, ",
+        "attachment_url, is_Delete, ",
+        "download, download_time, ",
+        "is_show, add_date, type)",
+        "values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, ",
+        "#{tag,jdbcType=VARCHAR}, #{imgs,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, ",
+        "#{size,jdbcType=DECIMAL}, #{attachmentName,jdbcType=VARCHAR}, ",
+        "#{attachmentUrl,jdbcType=VARCHAR}, #{isDelete,jdbcType=BIT}, ",
+        "#{download,jdbcType=BIT}, #{downloadTime,jdbcType=TIMESTAMP}, ",
+        "#{isShow,jdbcType=BIT}, #{addDate,jdbcType=TIMESTAMP}, #{type,jdbcType=VARCHAR})"
     })
     int insert(AvMovie record);
 
@@ -45,14 +45,12 @@ public interface AvMovieMapper {
      *
      * @mbggenerated
      */
-
     List<AvMovie> selectByExample(AvMovieExample example);
-
     @Select({
             "select",
-            "url",
+            "name",
             "from av_movie"
     })
-    Set<String> getUrls();
+    Set<String> getNames();
 
 }
